@@ -12,6 +12,8 @@ browser.get("https://web.whatsapp.com/")
 
 # Config
 receptor = '"Receptor name"'
+
+# Waits until qr has been completed
 wait_qr = WebDriverWait(browser, 60)
 x_arg = '//span[contains(@title, ' + receptor + ')]'
 target = wait_qr.until(
@@ -23,9 +25,10 @@ target.click()
 # Input class name is _1Plpp in Whatsapp web
 input_box = browser.find_element_by_class_name("_1Plpp") 
 
-message = "Mensaje a enviar"
+message = "Message from python"
 for i in range(5):
     # Five messages
     input_box.send_keys(message + Keys.ENTER)
 
 a = input("")
+
